@@ -44,6 +44,7 @@ export const VOICES = [
   },
 ] as const;
 
+export type VoiceConfig = (typeof VOICES)[number];
 export type VoiceId = (typeof VOICES)[number]['id'];
 
 export interface BeadazzledSettings {

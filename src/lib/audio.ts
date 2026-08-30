@@ -1,11 +1,11 @@
-import { VoiceConfig } from '@/src/config';
+import { VoiceConfig, WORDS } from '@/src/config';
 
 export function getAudioPath(voice: VoiceConfig['id'], word: string): string {
   return `/audio/${voice}/${word}.mp3`;
 }
 
 export function preloadVoiceAudio(voice: VoiceConfig): HTMLAudioElement[] {
-  return voice.words.map((word: string) => {
+  return WORDS.map((word: string) => {
     const audio = new Audio(getAudioPath(voice.id, word));
 
     audio.preload = 'auto';
