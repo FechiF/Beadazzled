@@ -54,7 +54,7 @@ export function SettingsScreen({
       <div className="space-y-8">
         <section>
           <label htmlFor="voice" className="mb-3 block text-xl font-black">
-            Voice
+            Voice / Accent
           </label>
 
           <select

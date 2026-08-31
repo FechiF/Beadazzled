@@ -7,7 +7,7 @@ interface PlayingScreenProps {
   onPause: () => void;
   onResume: () => void;
   onRestart: () => void;
-  onStop: () => void;
+  onFinish: () => void;
 }
 
 function formatTime(seconds: number): string {
@@ -24,7 +24,7 @@ export function PlayingScreen({
   onPause,
   onResume,
   onRestart,
-  onStop,
+  onFinish,
 }: PlayingScreenProps) {
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-5 py-8">
@@ -60,17 +60,17 @@ export function PlayingScreen({
         </button>
         <button
           type="button"
-          onClick={onStop}
-          className="min-w-40 rounded-2xl bg-red-500 px-7 py-5 text-xl font-black text-white shadow-lg transition active:scale-95"
-        >
-          Stop
-        </button>
-        <button
-          type="button"
           onClick={onRestart}
           className="min-w-40 rounded-2xl bg-green-500 px-7 py-5 text-xl font-black text-white shadow-lg transition active:scale-95"
         >
           Restart
+        </button>
+        <button
+          type="button"
+          onClick={onFinish}
+          className="min-w-40 rounded-2xl bg-red-500 px-7 py-5 text-xl font-black text-white shadow-lg transition active:scale-95"
+        >
+          Finish
         </button>
       </div>
     </main>

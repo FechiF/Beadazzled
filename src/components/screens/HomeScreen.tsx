@@ -1,13 +1,19 @@
 'use client';
 
 import type { BeadazzledSettings } from '@/src/config';
+import { AppScreen } from '@/src/hooks/useExerciseController';
 
 interface HomeScreenProps {
   settings: BeadazzledSettings;
   onStart: () => void;
+  onNavigate: (nextScreen: AppScreen) => void;
 }
 
-export function HomeScreen({ settings, onStart }: HomeScreenProps) {
+export function HomeScreen({ settings, onStart, onNavigate }: HomeScreenProps) {
+  function goToSettings() {
+    onNavigate('settings');
+  }
+
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-5 py-8 text-center">
       <div className="mb-8 max-w-xl">
@@ -39,14 +45,30 @@ export function HomeScreen({ settings, onStart }: HomeScreenProps) {
       </button>
 
       <div className="mt-8 flex flex-wrap justify-center gap-3">
-        <span className="rounded-full bg-yellow-100 px-4 py-2 font-bold text-yellow-900">
+        <button
+          type="button"
+          onClick={goToSettings}
+          className="rounded-full bg-yellow-100 px-4 py-2 font-bold text-yellow-900"
+        >
           {Math.floor(settings.durationSeconds / 60)} min{' '}
           {settings.durationSeconds % 60}s
-        </span>
+        </button>
 
-        <span className="rounded-full bg-blue-100 px-4 py-2 font-bold text-blue-900">
+        <button
+          type="button"
+          onClick={goToSettings}
+          className="rounded-full bg-blue-100 px-4 py-2 font-bold text-blue-900"
+        >
           {settings.intervalMs / 1000}s per word
-        </span>
+        </button>
+
+        <button
+          type="button"
+          onClick={goToSettings}
+          className="capitalize rounded-full bg-blue-100 px-4 py-2 font-bold text-green-900"
+        >
+          {`${settings.voice}${settings.voice === 'kid' ? '' : ' Accent'}`}
+        </button>
       </div>
     </main>
   );

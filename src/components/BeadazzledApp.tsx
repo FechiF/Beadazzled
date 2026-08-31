@@ -13,7 +13,6 @@ import { BeadazzledHeader } from './BeadazzledHeader';
 import { PlayingScreen } from './screens/PlayingScreen';
 
 export function BeadazzledApp() {
-  const router = useRouter();
   const controller = useBeadazzled();
 
   const {
@@ -34,11 +33,6 @@ export function BeadazzledApp() {
     controller.start();
   };
 
-  const stopExercise = () => {
-    controller.finish();
-    goToScreen('home');
-  };
-
   return (
     <div className="flex min-h-dvh flex-col bg-linear-to-b from-yellow-50 via-white to-blue-50">
       <BeadazzledHeader onLogoClick={() => goToScreen('home')} />
@@ -50,11 +44,15 @@ export function BeadazzledApp() {
           onPause={pause}
           onResume={resume}
           onRestart={restart}
-          onStop={stopExercise}
+          onFinish={finish}
         />
       )}
       {screen === 'home' && (
-        <HomeScreen settings={settings} onStart={startExercise} />
+        <HomeScreen
+          settings={settings}
+          onStart={startExercise}
+          onNavigate={goToScreen}
+        />
       )}
 
       {screen === 'settings' && (

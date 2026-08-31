@@ -9,7 +9,7 @@ export const APP_CONFIG = {
     durationStepSeconds: 30,
 
     // Time from the start of one word to the start of the next word.
-    defaultIntervalMs: 1000,
+    defaultIntervalMs: 1500,
 
     minIntervalMs: 500,
     maxIntervalMs: 3000,
@@ -32,15 +32,15 @@ export const VOICES = [
   },
   {
     id: 'australian',
-    name: 'Australian',
+    name: 'Australian Accent',
   },
   {
     id: 'british',
-    name: 'British',
+    name: 'British Accent',
   },
   {
     id: 'filipino',
-    name: 'Filipino',
+    name: 'Filipino Accent',
   },
 ] as const;
 
