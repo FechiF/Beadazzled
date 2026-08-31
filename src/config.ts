@@ -31,6 +31,10 @@ export const VOICES = [
     name: 'Kid',
   },
   {
+    id: 'diana',
+    name: 'Diana',
+  },
+  {
     id: 'australian',
     name: 'Australian Accent',
   },
