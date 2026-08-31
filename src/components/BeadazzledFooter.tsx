@@ -36,7 +36,7 @@ export function BeadazzledFooter(props: BeadazzledFooterProps) {
       ) : currentScreen === 'settings' ? (
         <FooterButton item={{ label: 'Save', screen: 'home' }} {...props} />
       ) : (
-        <FooterButton item={{ label: 'Done', screen: 'home' }} {...props} />
+        <FooterButton item={{ label: 'Ok', screen: 'home' }} {...props} />
       )}
     </footer>
   );
@@ -63,7 +63,9 @@ function FooterButton({
         'active:scale-95',
         currentScreen === 'settings'
           ? 'bg-green-500 text-white'
-          : 'bg-white text-slate-700 shadow-sm ring-1 ring-slate-200',
+          : currentScreen === 'home'
+            ? 'bg-white text-slate-700 shadow-sm ring-1 ring-slate-200'
+            : 'bg-blue-500 text-white',
       ].join(' ')}
     >
       {item.label}

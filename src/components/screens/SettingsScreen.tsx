@@ -73,7 +73,7 @@ export function SettingsScreen({
 
         <section>
           <label htmlFor="duration" className="mb-3 block text-xl font-black">
-            Exercise time
+            Exercise time in seconds
           </label>
 
           <div className="flex items-center gap-3">

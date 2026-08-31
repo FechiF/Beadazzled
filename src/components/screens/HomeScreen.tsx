@@ -1,6 +1,6 @@
 'use client';
 
-import type { BeadazzledSettings } from '@/src/config';
+import { VOICES, type BeadazzledSettings } from '@/src/config';
 import { AppScreen } from '@/src/hooks/useExerciseController';
 
 interface HomeScreenProps {
@@ -13,6 +13,8 @@ export function HomeScreen({ settings, onStart, onNavigate }: HomeScreenProps) {
   function goToSettings() {
     onNavigate('settings');
   }
+
+  const voice = VOICES.find((v) => v.id === settings.voice)?.name;
 
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-5 py-8 text-center">
@@ -65,9 +67,9 @@ export function HomeScreen({ settings, onStart, onNavigate }: HomeScreenProps) {
         <button
           type="button"
           onClick={goToSettings}
-          className="capitalize rounded-full bg-blue-100 px-4 py-2 font-bold text-green-900"
+          className="capitalize rounded-full bg-green-100 px-4 py-2 font-bold text-green-900"
         >
-          {`${settings.voice}${settings.voice === 'kid' ? '' : ' Accent'}`}
+          {`${voice ? voice : settings.voice === 'kid' ? '' : ' Accent'}`}
         </button>
       </div>
     </main>
