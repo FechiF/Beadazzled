@@ -82,7 +82,7 @@ export function SettingsScreen({
               onClick={() =>
                 changeDuration(-APP_CONFIG.exercise.durationStepSeconds)
               }
-              className="h-16 w-16 rounded-2xl bg-red-500 text-3xl font-black text-white"
+              className="h-16 w-16 rounded-2xl bg-orange-400 text-3xl font-black text-white"
               aria-label="Decrease exercise time"
             >
               −

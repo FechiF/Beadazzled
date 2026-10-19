@@ -6,6 +6,7 @@ export function Logo() {
       <div className="text-3xl text-stone-500 font-black tracking-tight">
         Beadazzled
       </div>
+
       <BeadString />
     </div>
   );

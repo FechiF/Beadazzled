@@ -20,7 +20,7 @@ export function InstructionsScreen() {
             key={step}
             className="flex items-start gap-4 rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200"
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-500 text-lg font-black text-white">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-400 text-lg font-black text-white">
               {index + 1}
             </span>
 
